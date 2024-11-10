@@ -2,20 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+color: #fff;
+background-color: #000;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .menu link {
+@apply cursor-pointer hover:text-[#7948ff55];
+  }
+  .text {
+    background-color: #53ddfc;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 3px 10px;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+  }
+  .tags:last-child{
+    margin-right: 0;
+  }
+  .tags:nth-child(2) {
+    background-color: #d0a8fd;
+  }
+
+  .tags:nth-child(3) {
+    background-color:  #fcf945fa;
+
+  }
+  .tags:nth-child(4) {
+    background-color: #f74340;
+  }
+  
+} 
+
+/* Letter Animations */
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px); /* Initial position (below) */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  font-weight: bold;
+  font-size: 4rem; /* Adjust based on your design */
+  transition-delay: 0.5s;
 }
